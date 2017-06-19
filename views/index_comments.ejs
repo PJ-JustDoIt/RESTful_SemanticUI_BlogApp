@@ -1,0 +1,19 @@
+<% include partials/header_comments %>
+
+     <div class="ui divided items container">                                          <!-- puts a nice dividing bar between items --> 
+        <% Blogs.forEach(function(eachBlog){  %>
+         <div class="blogitem" >
+             <!--<div class="image">                                                 constrains image size -->
+             <img src = "<%=eachBlog.image %>" >                                
+             <!--</div>-->
+             <div class="content">
+                <h3 class="title"> <%= eachBlog.title %>  </h3>
+                <h4 class="timestamp" > POSTED ON <span style="color:brown;text-decoration: underline;"> <%= eachBlog.created.toDateString() %> </span></h4>
+                <h4> <%- eachBlog.body.substring(0,200)  %> ... </h4>                 <!-- Note use of %-  : This is used to run the code. For example , if the body had <strong>Text here</strong> , then this code gets run . Also note use of substring -->
+                <a href="/blogs/<%= eachBlog._id %>" ><span class="readmore">Read More  </span> <i class=" small right chevron icon" ></i></a>
+             </div>
+         </div>
+        <% }); %>
+     </div>    
+
+<% include partials/footer_comments %>

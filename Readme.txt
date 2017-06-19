@@ -1,0 +1,1 @@
+A simple blog app created with RESTful routes, Semantic UI and MongoDB.

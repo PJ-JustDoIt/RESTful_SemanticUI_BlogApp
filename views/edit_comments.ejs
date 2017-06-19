@@ -1,0 +1,29 @@
+<% include partials/header_comments %>
+
+<div class="ui main text container segment ">
+    <div class="huge header"><strong>  Edit <%=blog.title%>  </strong> </div>   
+                                                                                         <!-- note the form stmt below with the action and method is activated only when u hit the submit button in the form -->
+    <form class="ui form" action="/blogs/<%= blog._id %>?_method=PUT" method = "POST">   <!-- note use of PUT . html does not support PUT request. method-override with npm install will override the POST method and make it a PUT method. This sends the updated form inputs to app.put route . -->
+        <div class="field">                                               <!-- creates some nice margins for the input box -->
+         <label>Title</label>
+         <input type="text" name ="title" value="<%= blog.title %>">      <!-- note use of value -->
+        </div>
+    
+        <div class="field">  
+         <label>Image</label>
+         <input type="text" name ="image" value="<%= blog.image %>">
+        </div>
+        
+        <div class="field">  
+         <label>Blog Content</label>
+         <textarea name="body"> <%= blog.body %> </textarea>                                   <!-- notice use of name here and use of textarea for a big comment box-->
+        </div>
+        <button class="ui violet big basic button">Submit</button>  
+        <!--  <input type="submit">                                           submit button -->
+    </form>
+</div>
+
+
+
+
+<% include partials/footer_comments %>

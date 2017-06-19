@@ -1,0 +1,28 @@
+<% include partials/header_comments %>
+
+<div class="ui main text container segment ">
+    <div class="huge header"> <strong>New Blog </strong></strong></div> 
+    <form class="ui form" action="/blogs" method = "POST">
+        <div class="field">                                               <!-- creates some nice margins for the input box -->
+         <label>Title</label>
+         <input type="text" name ="title" placeholder="Title">
+        </div>
+    
+        <div class="field">  
+         <label>Image</label>
+         <input type="text" name ="image" placeholder="image URL">
+        </div>
+        
+        <div class="field">  
+         <label>Blog Content</label>
+         <textarea name="body"> </textarea>                                   <!-- notice use of name here -->
+        </div>
+        <button class="ui violet big basic button">Submit</button>  
+        <!--  <input type="submit">                                           submit button -->
+    </form>
+</div>
+
+
+
+
+<% include partials/footer_comments %>
