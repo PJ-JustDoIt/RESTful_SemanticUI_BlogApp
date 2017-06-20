@@ -10,7 +10,12 @@ var express             = require('express'),
  app.use(expressSanitizer());             //  To prevent user from using <script> tags in user input forms, use  express-sanitizer. This stmt should be after body parser
  app.set("view engine","ejs");
  app.use(express.static('public'));   // for css stylesheets dir 
- mongoose.connect('mongodb://localhost/restful_blog_app'); 
+ 
+ //mongoose.connect('mongodb://localhost/restful_blog_app'); 
+ mongoose.connect('mongodb://restfulbloguser:restfulbloguser3@ds113650.mlab.com:13650/restfulblogsematicui'); // for heroku hosting
+
+
+ 
  app.use(methodOverride("_method"));         // for html use of app.put 
 
 // MONGOOSE config
