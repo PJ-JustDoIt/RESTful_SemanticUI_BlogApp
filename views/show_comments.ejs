@@ -3,10 +3,10 @@
 <% include partials/header_comments %>
 
 <div class="showcontainer">
-  <!--<div class="ui main text container segment ">       segment draws the border -->
+  
 
         <div class="imagecard">
-            <img src = <%=blog.image %> >   <!-- rounded is for orners -->
+            <img src = <%=blog.image %> >   
         </div>
     <div>    
         <div class="huge header showtitle"> 
@@ -14,16 +14,16 @@
         </div> 
         <hr>
         <div class="datestr">
-            <span > POSTED ON <span style="color:brown;text-decoration: underline;"><%= blog.created.toDateString() %> </span>  </span>                        <!-- converts date into more readatble format -->
+            <span > POSTED ON <span style="color:brown;text-decoration: underline;"><%= blog.created.toDateString() %> </span>  </span>                        
         </div>
         <div class="blogtext">
            <p> <%= blog.body %>  </p>
         </div>
  
         <div class="allbuttons">
-            <a class="ui medium green basic button" href="/blogs/<%= blog._id %>/edit"> <i class="large edit icon"></i> EDIT </a>          <!-- adding edit button to edit an object  -->
+            <a class="ui medium green basic button" href="/blogs/<%= blog._id %>/edit"> <i class="large edit icon"></i> EDIT </a>          
         
-            <form id="deletebutton" style="display:inline" class="ui form" action="/blogs/<%= blog._id %>?_method=DELETE" method = "POST">  <!-- note use of method override for DELETE request . note use od inline display for form --> 
+            <form id="deletebutton" style="display:inline" class="ui form" action="/blogs/<%= blog._id %>?_method=DELETE" method = "POST">   
                 <button class=" ui large red basic button ">X  &nbsp &nbsp DELETE </button>  
             </form>
         </div>
@@ -32,4 +32,4 @@
  
 
 
-                                                                                            <!-- you use div to make an inline element have it's own line -->
+                                                                                            

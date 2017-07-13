@@ -2,21 +2,21 @@ var express             = require('express'),
     app                 = express(),
     bodyParser          = require('body-parser'),
     mongoose            = require('mongoose'),
-    methodOverride      = require('method-override'), // for html use of app.put 
+    methodOverride      = require('method-override'), 
     expressSanitizer    = require('express-sanitizer');
 
 // //APP config    
  app.use(bodyParser.urlencoded({extended:true}));
- app.use(expressSanitizer());             //  To prevent user from using <script> tags in user input forms, use  express-sanitizer. This stmt should be after body parser
+ app.use(expressSanitizer());             
  app.set("view engine","ejs");
- app.use(express.static('public'));   // for css stylesheets dir 
+ app.use(express.static('public'));   
  
  //mongoose.connect('mongodb://localhost/restful_blog_app'); 
  mongoose.connect('mongodb://restfulbloguser:restfulbloguser3@ds113650.mlab.com:13650/restfulblogsematicui'); // for heroku hosting
 
 
  
- app.use(methodOverride("_method"));         // for html use of app.put 
+ app.use(methodOverride("_method"));         
 
 // MONGOOSE config
 var blogSchema = new mongoose.Schema({                          
@@ -77,7 +77,7 @@ app.post("/blogs",function(req,res){
                    image:image,
                    body:description};
     
-    //req.body.body=req.sanitize(req.body.body);     // removes all the <script> tags in input forms from user - doesn't seem to work ???
+    //req.body.body=req.sanitize(req.body.body);     
     
                            
     Blog.create(newBlog  , function(err,newlyCreated){
@@ -124,11 +124,11 @@ app.put("/blogs/:id",function(req,res){
                    
   //  req.body.body=req.sanitize(req.body.body);              
 
-    Blog.findByIdAndUpdate(req.params.id,editedBlog,function(err,updatedBlog){     // note use of findByIdAndUpdate
+    Blog.findByIdAndUpdate(req.params.id,editedBlog,function(err,updatedBlog){     
         if(err)
          {console.log(err);}
         else
-         {res.redirect("/blogs/"+req.params.id);}                                 // note use of + here and not /         
+         {res.redirect("/blogs/"+req.params.id);}                                          
     });
 });
 
@@ -136,7 +136,7 @@ app.put("/blogs/:id",function(req,res){
 // DELETE ROUTE - to delete an object from db 
 app.delete("/blogs/:id",function(req,res){            
 
-    Blog.findByIdAndRemove(req.params.id,function(err){      // note use of  findByIdAndRemove
+    Blog.findByIdAndRemove(req.params.id,function(err){      
         if(err)
          {console.log(err);}
         else

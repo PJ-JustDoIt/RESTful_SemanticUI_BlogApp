@@ -2,13 +2,13 @@
 
 
 
-i.icon{             /* all i tags with class = "icon" */
-    font-size:2em;  /* 2x parent  */
+i.icon{            
+    font-size:2em;  
 }
 
 
 #deletebutton{
-    display:inline;   /* making the form element inline*/
+    display:inline;   
 }
 
 .headeritem{
@@ -64,7 +64,7 @@ i.icon{             /* all i tags with class = "icon" */
 }
 
 .content h4:before { 
-   content: "\00a0 \00a0 \00a0 \00a0 \00a0 ";    /* to insert space at paragraph beginning */
+   content: "\00a0 \00a0 \00a0 \00a0 \00a0 ";    
 }
 
 
@@ -78,19 +78,17 @@ i.icon{             /* all i tags with class = "icon" */
     line-height:3px;
     font-size:1.2rem;
     position:relative; 
-    min-height:120%;            /* sets min height */
+    min-height:120%;            
     width:80%;
 }
 
 
 .showtitle{
-   /*text-shadow: -1px 0 gray, 0 1px gray, 1px 0 gray, 0 -1px gray;   */  /* for outline on font */
    text-align:center;
    font-size:2rem;
    font-weight:bold;
-   position:relative;          /* whether there's content or empty content , the space is reserved for it with 'relative'. Other content will not be adjusted to fit into any gap left by the element. */
-   top:7vh;                    /* top moves the element relative to it's default position on screen . To use relative positioning, place object first on screen without postion / top/left etc tag and then move it by doing position/top/left etc tags*/
-   /*left:20vw;*/
+   position:relative;          
+   top:7vh;                    
 }
 
 hr{
@@ -100,7 +98,6 @@ hr{
     background-image: linear-gradient(to right, rgba(0,0,0, 0), rgba(0,0,0, 0.75), rgba(0,0,0, 0));
     position:relative;
     top:10vh;
-    /*left:20vw;    */
 }
 
 .datestr{
@@ -110,7 +107,6 @@ hr{
    margin-bottom:5vh;
    position:relative;
    top:13vh;
-   /*left:20vw;  */
 }
 
 .imagecard{
@@ -131,11 +127,11 @@ hr{
    top:18vh;
    left:2vw;
    margin-right:3vw;
-   word-spacing: 9px;            /* spacing between words in a text content */
+   word-spacing: 9px;            
 }
 
 .blogtext p:before {
-       content: "\00a0 \00a0 \00a0 \00a0 ";    /* to insert space at paragraph beginning */
+       content: "\00a0 \00a0 \00a0 \00a0 ";    
 }
 
 .basic, a.button{
@@ -149,8 +145,8 @@ a.ui.medium.green.basic.button{
 
 .allbuttons{
     float:right;
-    position:absolute;    /*an element that is positioned absolutely is taken out of the flow and thus takes up no space when placing other elements. */
-    bottom:2vh;            /*The absolutely positioned element is positioned relative to nearest positioned ancestor */
+    position:absolute;    
+    bottom:2vh;            
     right:7vw;
 
 }
